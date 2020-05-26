@@ -1,0 +1,34 @@
+{
+  "name": "PCDiff-Server",
+  "version": "1.0.0",
+  "description": "Server side source code for PCDiff",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "tap test/**/*.test.js",
+    "start": "fastify start -l info app.js",
+    "dev": "fastify start -w -l info -P app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pcdiff/PCDiff-Server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pcdiff/PCDiff-Server/issues"
+  },
+  "homepage": "https://github.com/pcdiff/PCDiff-Server#readme",
+  "dependencies": {
+    "fastify": "^2.0.0",
+    "fastify-plugin": "^1.5.0",
+    "fastify-autoload": "^1.0.0",
+    "fastify-cli": "^1.5.0"
+  },
+  "devDependencies": {
+    "tap": "^12.5.3"
+  }
+}
