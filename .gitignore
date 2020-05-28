@@ -59,4 +59,6 @@ profile*
 
 # generated code
 examples/typescript-server.js
-test/types/index.js
+test/types/PDServer.js
+
+bin/*

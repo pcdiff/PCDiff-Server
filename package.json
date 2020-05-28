@@ -1,15 +1,26 @@
 {
-  "name": "PCDiff-Server",
+  "name": "pcdiff-server",
   "version": "1.0.0",
+  "private": true,
   "description": "Server side source code for PCDiff",
-  "main": "app.js",
-  "directories": {
-    "test": "test"
+  "main": "start.js",
+  "prettier": {
+    "useTabs": true,
+    "tabWidth": 4,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "bracketSpacing": true,
+    "arrowParens": "always"
   },
   "scripts": {
-    "test": "tap test/**/*.test.js",
-    "start": "fastify start -l info app.js",
-    "dev": "fastify start -w -l info -P app.js"
+    "build": "babel ./src -d bin --copy-files",
+    "lint": "eslint ./src",
+    "lint-fix": "eslint ./src --fix",
+    "log": "auto-changelog",
+    "start": "node start.js",
+    "dev": "nodemon script/dev.js",
+    "test": "npm run unit-test && npm run lint",
+    "unit-test":"jest"
   },
   "repository": {
     "type": "git",
@@ -23,12 +34,20 @@
   },
   "homepage": "https://github.com/pcdiff/PCDiff-Server#readme",
   "dependencies": {
-    "fastify": "^2.0.0",
-    "fastify-plugin": "^1.5.0",
-    "fastify-autoload": "^1.0.0",
-    "fastify-cli": "^1.5.0"
+    "fastify": "^2.0.0"
   },
   "devDependencies": {
-    "tap": "^12.5.3"
+    "@babel/cli": "7.8.4",
+    "@babel/core": "7.8.7",
+    "@babel/polyfill": "7.8.7",
+    "@babel/preset-env": "7.8.7",
+    "@babel/register": "^7.9.0",
+    "auto-changelog": "^2.0.0",
+    "babel-eslint": "^10.1.0",
+    "core-js": "3.6.0",
+    "eslint": "5.16.0",
+    "jest": "^26.0.1",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.0.4"
   }
 }
