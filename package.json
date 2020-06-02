@@ -20,7 +20,7 @@
     "start": "node start.js",
     "dev": "nodemon script/dev.js",
     "test": "npm run unit-test && npm run lint",
-    "unit-test":"jest"
+    "unit-test": "jest"
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,7 @@
   },
   "homepage": "https://github.com/pcdiff/PCDiff-Server#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "fastify": "^2.0.0"
   },
   "devDependencies": {
