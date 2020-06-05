@@ -1,5 +1,7 @@
 import fastify from 'fastify';
 
+import env from './environment';
+
 class PDServer {
 	static start() {
 		const server = fastify();
@@ -8,7 +10,7 @@ class PDServer {
 			reply.send({ pcdiff: 'running' });
 		});
 
-		server.listen(3000, (err, address) => {
+		server.listen(env.SERVER_PORT, (err, address) => {
 			if (err) {
 				throw err;
 			}
